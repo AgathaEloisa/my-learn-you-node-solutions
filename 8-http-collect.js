@@ -9,11 +9,11 @@ http.get(url, (res) => {
     res.pipe(bl((err, data) => {
         if (err) {
             throw err;
-        }
-        data.toString()
+        }       
         let blx = new bl()
         blx.append(data)
         console.log(blx.length);
+        console.log(data.toString()) 
 
     }))
 
