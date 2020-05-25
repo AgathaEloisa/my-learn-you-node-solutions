@@ -2,15 +2,8 @@ const fs = require('fs');
 const route = process.argv[2];
 
 //haciendolo asincrono
-fs.readFile(route, 'utf8', (err, data) => {
-    if(err){
-        throw console.log('hhh', err);
-    }
-    let counter = 0;
-    for(let i = 0; i < data.length; i++){
-        if(data[i] == '\n'){
-            counter++;
-        }
-    }
-    return console.log(counter);
+fs.readFile(route, 'utf-8', (err, data) => {
+    if(err) throw err;
+    let jumps = data.split('\n').length-1;
+    console.log(jumps);
 })
