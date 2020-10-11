@@ -1,0 +1,10 @@
+9-juggling async
+
+i will receive three arguments or three urls
+
+i just need to print de string content of each url, not
+the length (in argument order).
+
+## Hints
+
+i need to keep the results until i've them all.

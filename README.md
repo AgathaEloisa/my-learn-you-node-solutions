@@ -1,3 +1,7 @@
+## MY LEARNYOUNODE SOLUTIONS
+If you want to use my solutions to these backend challenges, you will need to install bl. How? with "npm install bl" in the command line.
+
+**the next are the descriptions of the each exercise.**
 ## HELLO WORLD (Exercise 1 of 13)  
    
   Create a file named hello-world.js.  
