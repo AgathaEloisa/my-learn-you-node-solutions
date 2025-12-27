@@ -1,10 +1,15 @@
-//url de prueba: http://127.0.0.1:5500/test-files/abc.html
-const http = require('http');
-const url = process.argv[2];
+ /* Write a program that performs an HTTP GET request to a URL provided to you  
+  as the first command-line argument. Write the String contents of each  
+  "data" event from the response to a new line on the console (stdout).  */
+let http = require('http');
 
-http.get(url, (res) => {
-    res.setEncoding('utf8');
-    res.on('data', data => {
-        console.log(data);
-    });
-});
+let cc = process.argv[2]
+
+let caca = (cc) => { 
+  http.get (cc, (res) => { 
+     res.setEncoding('utf8');
+     res.on('data', function (data) { console.log(data.toString())});
+  });
+}
+
+caca(cc);

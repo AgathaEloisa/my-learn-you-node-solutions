@@ -1,14 +1,11 @@
-let input = process.argv;
+const sumNums = (nums) => {
+    const sizeArr = nums.length;
+    let sum = 0;
 
-const sum = (num) => {
+    for (let i = 2; i < sizeArr; i++) {
+      sum += +nums[i];  
+    }
+    console.log(sum);  
+};
 
-    let result = 0;
-
-    for(let i = 2; i < num.length; i++){
-        result += parseInt(num[i]);
-   }
-   
-    return result;
-}
-
-console.log(sum(input));
+sumNums(process.argv);

@@ -1,20 +1,16 @@
-// Recuerda hacer data.toString() para convertir al Buffer de Node a String.
-const http = require('http');
-//const hyperquest = require('hyperquest');
 const bl = require('bl');
-const url = process.argv[2];
-// let bl = new BufferList();
+const http = require('http');
 
-http.get(url, (res) => {
-    res.pipe(bl((err, data) => {
-        if (err) {
-            throw err;
-        }       
-        let blx = new bl()
-        blx.append(data)
-        console.log(blx.length);
-        console.log(data.toString()) 
+let url = process.argv[2];
 
-    }))
-
-})
+http.get(url, function (response) {
+    response.pipe(bl(function (err, data) {
+        if (err) { console.error(err); return; }
+        data = data.toString();
+        console.log(data.length);
+        console.log(data);
+    }
+    ));
+}   ).on('error', function (e) {
+    console.error(`Got error: ${e.message}`);
+});
